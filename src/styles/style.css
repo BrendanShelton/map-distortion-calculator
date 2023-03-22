@@ -1,0 +1,203 @@
+/*defines variables to be used throughout the CSS*/
+:root {
+    --gray: rgb(245, 245, 245);
+    --light-blue: rgb(31, 46, 55);
+  }
+ 
+/*sets the background color of the entire page*/
+body {
+    background-color: var(--gray);
+}
+
+main {
+    position: relative;
+}
+/*sets the font size of first heading*/
+h1 {
+    font-size: 200%;
+    color: rgb(255, 255, 255);
+}
+
+/*styles the header and sets it to be a flex box*/
+header {
+    border-bottom: 5px solid;
+    padding: 1%;
+    margin: 0;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--light-blue);
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    
+}
+
+/*sets the navigation bar to be a flex box*/
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 350px;
+}
+
+/*styles the links in the navigation bar*/
+nav a {
+    background-color: unset;
+    color: rgb(121, 121, 176);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2%;
+    border-radius: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+.active {
+    background-color: white;
+    border-radius: 10px;
+}
+
+/*sets the main content below the header to be a flex box*/
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+/*sets each of the sections to be a flex box*/
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2%;
+    margin-bottom: 10%;
+}
+
+/*styles the image in the "about section"*/
+#portrait {
+    border: 2px solid black;
+    padding: .5%;
+    margin-bottom: 1%;
+    max-width: 150px;
+}
+
+/*sets the margins of the content of the "about" section*/
+#biography {
+    margin: 1% 4%;
+}
+
+/*sets the margin and width of the area containing the boxes showing the projects*/
+#projects {
+    margin: 1% auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*styles the headings of the sections*/
+h2 {
+    font-size: 150%;
+    margin: 1%;
+}
+
+/*styles the boxes showing the projects*/
+figure {
+    background-color: var(--light-blue);
+    padding: 1%;
+    border: 4px solid black;
+    border-radius: 8px;    
+    width: 45%; 
+    margin: .5%;
+}
+
+/*styles the content of the boxes showing the projects*/
+figure a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+}
+
+figure p {
+    color: white;
+}
+
+/*sets the first project to be larger than the others*/
+#first-application {    
+    width: 100%;
+}
+
+/*sets the flex box for the other projects*/
+#later-projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+/*sets the width and padding of images*/
+img {
+    width: 80%;
+    padding: 1%;
+}
+
+/*sets the margin of project screenshots*/
+figure a img {
+    margin: 1% auto;
+}
+
+.repoLink {
+    margin-top: 1%;
+    text-decoration: underline;
+}
+
+.form {
+    margin: 1% auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer {
+    border-top: 5px solid;
+    padding: 1%;
+    margin: 0;
+   
+    background-color: var(--light-blue);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+/*styles the list of contact information*/
+#footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin: 1% 1%;
+    list-style: none;
+}
+
+#footer ul li {
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+
+/*makes boxes showing the projects wider when the screen is smaller*/
+@media screen and (max-width: 768px) {
+    figure {
+      width: 100%;
+    }
+  }
