@@ -1,36 +1,44 @@
 import React, { useState } from 'react';
 
 function Contact() {
-  const [userName, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('')
+  const [width, setWidth] = useState('');
+  const [latitude, setLatitude] = useState('');
+  const [trueDistance, setTrueDistance] = useState('')
+  const [distance, setDistance] = useState('')
 
   const input = (e) => {
     const { name, value } = e.target;
 
 
-    if (name === 'name') {
-        setName(value)
-    } else if (name === 'email') {
-        setEmail(value);
+    if (name === 'width') {
+        setWidth(value)
+    } else if (name === 'latitude') {
+        setLatitude(value);
+    } else if (name === 'trueDistance') {
+      setTrueDistance(value);
     } else {
-        setMessage(value)
+        setDistance(value)
     };
     //return 
 }
   const submit = (e) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+    //the radius of the planet
+    equatorRadius = width/(2*Math.PI)
+    //the radius of the circle formed by the higher line of latitude
+    higherRadius = Math.cos(latitude * Math.PI/180) * equatorRadius
+    higherCircumference = 2 * Math.PI * higherRadius
 
-    setName('');
-    setEmail('');
-    setMessage('');
+    trueDistance = distance * (higherRadius/equatorRadius)
+
+    
   };
 
   return (
     <section>
       <h2>
-        Contact
+        Map Distortion Calculator
       </h2>
       <form className="form">
         <input
